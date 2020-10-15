@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Gallery</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
+
+<!-- 
+
+     origin: In 2005, artist Matt Furie created the comic series Boy's Club, which stars the teenage monster characters Pepe, Brett, Andy and Landwolf.
+    <a-image position='0 3.5 4' width="4" height="4" src="https://static01.nyt.com/images/2016/09/28/us/17xp-pepethefrog_web1/28xp-pepefrog-articleLarge.jpg?quality=75&auto=webp&disable=upscale"></a-image>
+    <a-box position='0 0 4' width='4' height='3'></a-box>
+    
+    !-- DoodleBob is the main antagonist of the episodes "Frankendoodle" and "Doodle Dimension,"  --
+    <a-image position='5 3.5 4' width="4" height="4" src="https://vignette.wikia.nocookie.net/spongebob/images/d/d9/DoodleBob.png/revision/latest?cb=20200714002504"></a-image>
+    <a-box position='5 0 4' width='4' height='3'></a-box>
+
+    !-- https://www.trevorjonesart.com/ "The Architect" a paiting of the creator of bitcoin satoshi nakamoto sold for 27.5eth  --
+    <a-image position='-5 3.5 4' width="4" height="4" src="https://lh3.googleusercontent.com/8-W5NpfYHwaMcISmFZbwkVU_8EzHAkZiSNP_q4HhMvCXhgepsiupTV5vKt_bs_VJjfXCp6Dgs8cWsmvmtDLPX7rA=s992"></a-image>
+    <a-box position='-5 0 4' width='4' height='3'></a-box>
+    
+  
+    
+    !-- Cali Gallery --
+
+    <a-image rotation='0 180 0' position='0 3.5 -4' width="3" height="4" src="./assets/Duo.jpeg"></a-image>
+    <a-box position='0 0 -4' width='3' height='3'></a-box>
+
+    <a-image rotation='0 180 0' position='-15 3.5 4' width="3" height="4" src="./assets/DeathValley.jpeg"></a-image>
+    <a-box position='-15 0 4' width='3' height='3'></a-box>
+    
+    <a-image rotation='0 180 0' position='-20 3.5 4' width="3" height="4" src="./assets/GGBridge.jpeg"></a-image>
+    <a-box position='-20 0 4' width='3' height='3'></a-box>
+    <a-plane 
+    src='#ground'
+    position='0 0.3 -4'  rotation="-90 0 90" height="25" width="25"></a-plane>
+     -->
+
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="texture-floor" src="./assets/floor.jpg">
+            <img id="texture-wall" src="./assets/wall.jpg">
+        </a-assets>
+        <a-entity id="rig" movement-controls="constrainToNavMesh: true">
+            <a-entity camera
+                      position="0 1.6 0"
+                      look-controls
+                      >
+            </a-entity>
+          </a-entity>
+    
+        <a-entity id="walls"></a-entity>
+    
+        <a-grid id="ground" static-body material="src: #texture-floor"></a-grid>
+    
+        <a-sky id="sky" color="#AADDF0"></a-sky>
+    
+        <!-- Lighting -->
+        <a-light type="ambient" color="#ccc"></a-light>
+    </a-scene>
+    <script type="text/javascript" src="./mapGenerator.js"></script>
+    
+</body>
+</html>
